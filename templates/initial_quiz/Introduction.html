@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Instrucciones
+{% endblock %}
+
+{% block content %}
+{% include Constants.instructions_template %}
+
+<h3>Quiz de entendimiento</h3>
+<p>
+A continuación, responderás brevemente un cuestionario para determinar tu entendimiento de las instrucciones.
+Recibirás 5 puntos por cada pregunta correcta. Las ganancias que obtengas aquí se sumarán a las obtenidas en la
+tarea anterior.
+</p>
+
+    {% next_button %}
+
+<br>
+{% include Constants.contact_template %}
+{% endblock %}
