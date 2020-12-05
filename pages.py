@@ -15,6 +15,7 @@ debug = True
 
 class GeneralRules(Page):
     def is_displayed(self):
+        self.participant.vars['MobilePhones'] is False
         # Here, we'll obtain the type of user we've
         user_agent = self.request.META['HTTP_USER_AGENT']
         # Default value
@@ -30,6 +31,7 @@ class GeneralRules(Page):
 
 class Introduction(Page):
     def is_displayed(self):
+        self.participant.vars['MobilePhones'] is False
         # Here, we'll obtain the type of user we've
         user_agent = self.request.META['HTTP_USER_AGENT']
         # Default value
@@ -44,6 +46,7 @@ class Introduction(Page):
 
 class QuizPage(Page):
     def is_displayed(self):
+        self.participant.vars['MobilePhones'] is False
         # Here, we'll obtain the type of user we've
         user_agent = self.request.META['HTTP_USER_AGENT']
         # Default value
@@ -111,6 +114,7 @@ class QuizPage(Page):
 
 class QuizResults(Page):
     def is_displayed(self):
+        self.participant.vars['MobilePhones'] is False
         # Here, we'll obtain the type of user we've
         user_agent = self.request.META['HTTP_USER_AGENT']
         # Default value
@@ -145,6 +149,7 @@ class QuizResults(Page):
 
 class QuizTimeout(Page):
     def is_displayed(self):
+        self.participant.vars['MobilePhones'] is False
         # Here, we'll obtain the type of user we've
         user_agent = self.request.META['HTTP_USER_AGENT']
         # Default value
