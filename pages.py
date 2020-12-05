@@ -14,15 +14,45 @@ debug = True
 
 
 class GeneralRules(Page):
+    def is_displayed(self):
+        # Here, we'll obtain the type of user we've
+        user_agent = self.request.META['HTTP_USER_AGENT']
+        # Default value
+        self.participant.vars['MobilePhones'] = False
+        # The default is changed if the player is mobile
+        for substring in ['Mobi', 'Android']:
+            if substring in user_agent:
+                self.participant.vars['MobilePhones'] = True
+        return self.participant.vars['MobilePhones']    
     def vars_for_template(self):
         return dict(participant_id=self.participant.label)
 
 
 class Introduction(Page):
+    def is_displayed(self):
+        # Here, we'll obtain the type of user we've
+        user_agent = self.request.META['HTTP_USER_AGENT']
+        # Default value
+        self.participant.vars['MobilePhones'] = False
+        # The default is changed if the player is mobile
+        for substring in ['Mobi', 'Android']:
+            if substring in user_agent:
+                self.participant.vars['MobilePhones'] = True
+        return self.participant.vars['MobilePhones']
     pass
     
 
 class QuizPage(Page):
+    def is_displayed(self):
+        # Here, we'll obtain the type of user we've
+        user_agent = self.request.META['HTTP_USER_AGENT']
+        # Default value
+        self.participant.vars['MobilePhones'] = False
+        # The default is changed if the player is mobile
+        for substring in ['Mobi', 'Android']:
+            if substring in user_agent:
+                self.participant.vars['MobilePhones'] = True
+        return self.participant.vars['MobilePhones']
     _allow_custom_attributes = True
     form_model = 'player'
     # timeout_seconds = Constants.timer
@@ -80,6 +110,16 @@ class QuizPage(Page):
 
 
 class QuizResults(Page):
+    def is_displayed(self):
+        # Here, we'll obtain the type of user we've
+        user_agent = self.request.META['HTTP_USER_AGENT']
+        # Default value
+        self.participant.vars['MobilePhones'] = False
+        # The default is changed if the player is mobile
+        for substring in ['Mobi', 'Android']:
+            if substring in user_agent:
+                self.participant.vars['MobilePhones'] = True
+        return self.participant.vars['MobilePhones']
     form_model = 'player'
     form_fields = ['quiz_dec_2']
 
@@ -104,6 +144,17 @@ class QuizResults(Page):
 
 
 class QuizTimeout(Page):
+    def is_displayed(self):
+        # Here, we'll obtain the type of user we've
+        user_agent = self.request.META['HTTP_USER_AGENT']
+        # Default value
+        self.participant.vars['MobilePhones'] = False
+        # The default is changed if the player is mobile
+        for substring in ['Mobi', 'Android']:
+            if substring in user_agent:
+                self.participant.vars['MobilePhones'] = True
+        return self.participant.vars['MobilePhones']
+    
     _allow_custom_attributes = True
 
     def vars_for_template(self):
